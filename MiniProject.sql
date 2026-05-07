@@ -24,6 +24,7 @@ CREATE TABLE product (
     FOREIGN KEY (category_id) REFERENCES category(category_id)
 );
 
+
 CREATE TABLE orderTable (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
@@ -82,3 +83,17 @@ VALUES
 (3, 3, 3, 1350000),
 (4, 4, 2, 240000),
 (5, 6, 1, 2500000);
+
+
+
+-- Quyên
+
+SELECT full_name, email,
+CASE 
+WHEN gender = 1 THEN 'Nam'
+ELSE 'Nữ'
+END AS Sex
+FROM customer;
+
+SELECT * FROM customer
+ORDER BY (NOW() - YEAR(dob)) LIMIT 3
