@@ -83,6 +83,19 @@ VALUES
 (4, 4, 2, 240000),
 (5, 6, 1, 2500000);
 
+-- 1
+SELECT full_name, email,
+CASE 
+WHEN gender = 1 THEN 'Nam'
+ELSE 'Nữ'
+END AS Sex
+FROM customer;
+
+
+-- 2
+SELECT * FROM customer
+ORDER BY (NOW() - YEAR(dob)) LIMIT 3
+
 -- 5
 select * from product
 where product_price > (select avg(product_price) avg_price from product);
